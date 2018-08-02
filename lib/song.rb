@@ -42,7 +42,6 @@ class Song
   end
 
   def self.find_by_name(name)
-    @@all.collect { |song| song.artist}
-    artists.uniq
+    @@all.collect(name)
   end
 end
