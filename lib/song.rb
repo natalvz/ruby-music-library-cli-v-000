@@ -1,9 +1,9 @@
-class Song 
-  
+class Song
+
   attr_accessor :name, :artist, :genre
-  
+
   @@all = []
-  
+
   def initialize(name, artist = nil, genre = nil)
     @name = name
     if artist != nil
@@ -14,28 +14,28 @@ class Song
     end
     save
   end
-  
-  def self.all 
-    @@all 
-  end 
-  
+
+  def self.all
+    @@all
+  end
+
   def self.destroy_all
     @@all.clear
-  end 
-  
+  end
+
   def save
     @@all << self
-  end 
-  
-  def self.create(name) 
+  end
+
+  def self.create(name)
     self.new(name)
-  end 
-  
+  end
+
   def artist=(artist)
     @artist = artist
     artist.add_song(self)
   end
-  
+
   def genre=(genre)
     @genre = genre
     genre.add_song(self)
@@ -45,4 +45,4 @@ class Song
     @@all.collect { |song| song.artist}
     artists.uniq
   end
-end 
+end
