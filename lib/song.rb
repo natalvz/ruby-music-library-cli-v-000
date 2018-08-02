@@ -44,4 +44,13 @@ class Song
   def self.find_by_name(name)
     self.all.detect {|item| item.name == name }
   end
+
+  def self.find_or_create_by_name(name)
+    song = self.find_by_name(name)
+    if song == nil
+      self.create(name)
+    else 
+      return song
+    end 
+  end
 end
