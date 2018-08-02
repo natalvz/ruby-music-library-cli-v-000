@@ -41,5 +41,5 @@ class Genre
     artists = @songs.collect { |song| song.artist}
     artists.uniq
   end
-  
+
 end
