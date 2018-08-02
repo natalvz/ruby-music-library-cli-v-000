@@ -49,8 +49,8 @@ class Song
     song = self.find_by_name(name)
     if song == nil
       self.create(name)
-    else 
+    else
       return song
-    end 
+    end
   end
 end
