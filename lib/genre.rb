@@ -26,7 +26,7 @@ class Genre
     self.new(genre)
   end
 
-    def add_song(song)
+  def add_song(song)
     if song.genre != self
       song.genre = self
     end
@@ -39,5 +39,6 @@ class Genre
   def artists
     artists = @songs.collect { |song| song.artist}
     artists.uniq
-  endartists
+  end
+  
 end
