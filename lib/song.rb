@@ -36,8 +36,13 @@ class Song
     artist.add_song(self)
   end
   
-    def genre=(genre)
+  def genre=(genre)
     @genre = genre
     genre.add_song(self)
+  end
+
+  def self.find_by_name(name)
+    @@all.collect { |song| song.artist}
+    artists.uniq
   end
 end 
